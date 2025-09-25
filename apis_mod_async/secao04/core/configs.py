@@ -1,16 +1,16 @@
-from typing import List
+from pydantic_settings import BaseSettings
 
-from pydantic import AnyHttpUrl, ConfigDict
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base
+from typing import ClassVar
 
-class Settings(ConfigDict):
+class Settings(BaseSettings):
     """
-    COnfigurações gerais usadas na aplicação
+    Configurações gerais usadas na aplicação
     """
 
     API_V1_STR: str = '/api/v1'
     DB_URL: str = "postgresql+asyncpg://geek:university@localhost:5432/faculdade"
-    DBBaseModel = declarative_base()
+    DBBaseModel: ClassVar = declarative_base()
 
     class Config:
         case_sensitive = True
