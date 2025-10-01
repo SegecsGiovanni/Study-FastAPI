@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     """
 
     API_V1_STR: str = '/api/v1'
-    DB_URL: str = "postgresql+asyncpg://geek:university@localhost:5432/faculdade"
+    DB_URL: str = "postgresql+asyncpg://geek:734327_Segecs@localhost:5432/faculdade"
     DBBaseModel: ClassVar = declarative_base()
 
     class Config:
