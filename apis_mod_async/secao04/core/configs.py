@@ -1,5 +1,6 @@
 
 from pydantic_settings import BaseSettings
+
 from sqlalchemy.orm import declarative_base
 from typing import ClassVar
 
