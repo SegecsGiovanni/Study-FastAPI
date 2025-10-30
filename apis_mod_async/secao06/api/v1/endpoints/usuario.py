@@ -86,3 +86,6 @@ async def get_usuario(usuario_id: int, usuario: UsuarioSchemaUp, db: AsyncSessio
         if not usuario_up:
             raise HTTPException(detail="Usuário não encontrado.", status_code=status.HTTP_404_NOT_FOUND)
 
+# Futuro DELETE
+...
+
