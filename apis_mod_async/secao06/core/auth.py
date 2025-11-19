@@ -28,18 +28,18 @@ async def autenticar(email: EmailStr, senha: str, db: AsyncSession) -> Optional[
         if not usuario:
             return None
         
-        if not verificar_senha(senha, verificar_senha):
+        if not verificar_senha(senha, usuario.senha):
             return None
         
         return usuario
 
 def _criar_token(tipo_token: str, tempo_vida: timedelta, sub: str) -> str:
+    sp = timezone('America/Sao_Paulo')
     time_sp = datetime.now(tz=sp)
 
     # https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.3
     payload = {}
     
-    sp = timezone('America/Sao_Paulo')
     expira = time_sp + tempo_vida
 
     payload["type"] = tipo_token
